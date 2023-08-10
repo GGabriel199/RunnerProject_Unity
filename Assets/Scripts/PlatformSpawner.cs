@@ -7,10 +7,12 @@ public class PlatformSpawner : MonoBehaviour
 {
     public List<GameObject> platforms = new List<GameObject>();
     public List<Transform> currentPlatforms = new List<Transform>();
+    private Vector3 platformMove;
     private int offset;
     private Transform player;
     private Transform currentPlatformPoint;
     private int platformIndex;
+    private float backwardsSpeed;
 
     void Start()
     {
@@ -46,6 +48,7 @@ public class PlatformSpawner : MonoBehaviour
     }
     public void Reposition(GameObject platform){
         platform.transform.position = new Vector3(0,0, offset);
+
         offset += 40;
     }
     
